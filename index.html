@@ -151,24 +151,19 @@ button[type="submit"]:hover {
 
 .hero-content { position: relative; z-index: 10; max-width: 900px; }
 .hero-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem; }
-.js-ready .hero-label { opacity: 0; animation: fadeUp 0.8s var(--ease-out) 0.1s forwards; }
+.js-ready .hero-label { animation: fadeUp 0.8s var(--ease-out) 0.1s both; }
 .hero-label::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--orange); }
 .hero-headline { font-family: var(--f-display); font-size: clamp(4.5rem,9vw,10rem); font-weight: 300; line-height: 0.88; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 2.5rem; }
-.js-ready .hero-headline { opacity: 0; animation: fadeUp 1s var(--ease-out) 0.25s forwards; }
+.js-ready .hero-headline { animation: fadeUp 1s var(--ease-out) 0.25s both; }
 .hero-headline em { font-style: italic; font-weight: 300; color: var(--orange); }
-.hero-sub-row { display: flex; align-items: flex-end; gap: 4rem; }
-.js-ready .hero-sub-row { opacity: 0; animation: fadeUp 0.8s var(--ease-out) 0.55s forwards; }
-.hero-desc { font-size: 1.05rem; color: var(--ink-soft); max-width: 340px; line-height: 1.65; }
+.js-ready .hero-desc { font-size: 1.05rem; color: var(--ink-soft); max-width: 340px; line-height: 1.65; }
 .hero-desc strong { color: var(--ink); font-weight: 600; }
-.hero-scroll { position: absolute; bottom: 2rem; right: 3rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); z-index: 10; }
-.js-ready .hero-scroll { opacity: 0; animation: fadeUp 0.8s var(--ease-out) 1s forwards; }
-.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--orange), transparent); animation: scrollPulse 2s ease-in-out infinite; }
-@keyframes scrollPulse { 0%,100%{transform:scaleY(1);opacity:0.6} 50%{transform:scaleY(1.2);opacity:1} }
+.js-ready  50%{transform:scaleY(1.2);opacity:1} }
 @keyframes fadeUp { 0%{opacity:0;transform:translateY(30px)} 100%{opacity:1;transform:translateY(0)} }
 
 /* STICKER */
 .hero-sticker { position: absolute; top: 7rem; right: 3rem; z-index: 10; }
-.js-ready .hero-sticker { opacity: 0; animation: stickerPop 0.8s var(--ease-out) 0.8s forwards; }
+.js-ready .hero-sticker { animation: stickerPop 0.8s var(--ease-out) 0.8s both; }
 .sticker-inner { position: relative; width: 168px; height: 168px; display: flex; align-items: center; justify-content: center; }
 .sticker-ring { position: absolute; inset: 0; animation: spin 12s linear infinite; }
 .sticker-ring svg { width: 100%; height: 100%; display: block; }
@@ -343,8 +338,7 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.07); p
   .nav-links { display: none; }
   section { padding: 4rem 1.2rem; }
   #hero { padding: 0 1.2rem 3rem; }
-  .hero-sub-row { flex-direction: column; align-items: flex-start; gap: 2rem; }
-  .hero-sticker { display: none; }
+    .hero-sticker { display: none; }
   .steps-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .contact-buttons { flex-direction: column; align-items: center; }
@@ -414,14 +408,8 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.07); p
   <div class="hero-content">
     <div class="hero-label">Welcome to</div>
     <h1 class="hero-headline">Marion&#39;s<br><em>World.</em></h1>
-    <div class="hero-sub-row">
-      <p class="hero-desc">I&#39;m a <strong>creative marketer</strong> working across design, strategy, and digital. This is my world.</p>
-      <a href="#work" class="hero-cta">Explore my work &rarr;</a>
-    </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="scroll-line"></div>
-    <span>scroll</span>
+    <p class="hero-desc">I&#39;m a <strong>creative marketer</strong> working across design, strategy, and digital. This is my world.</p>
+    <a href="#work" class="hero-cta" style="margin-top:1.5rem;">Explore my work &rarr;</a>
   </div>
 </section>
 
@@ -524,8 +512,8 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.07); p
         </div>
         <h3 class="project-title">Designing the system behind <em>Prezzee&#39;s</em> scalable lifecycle marketing</h3>
         <div class="project-phase">Design System &rarr; Email &rarr; Performance</div>
-        <p class="project-desc">At Prezzee, every lifecycle email is a touchpoint in someone&#39;s gifting journey. I rebuilt a modular component library in Figma and Stripo, forming a flexible system of reusable building blocks.</p>
-        <p class="project-desc">Every component was designed not only for brand expression, but for measurable performance.</p>
+        <p class="project-desc">At Prezzee, every lifecycle email is a touchpoint in someone&#39;s gifting journey. As lifecycle matured, it needed stronger design infrastructure. I rebuilt a modular component library in Figma and Stripo — a flexible system of reusable building blocks where email data informed layout logic, CTA placement, and A/B testing flexibility.</p>
+        <p class="project-desc">Every component was designed for both brand expression and measurable performance, resulting in an average of <strong>123% increase in clicks</strong> and <strong>140% increase in unique opens.</strong></p>
       </div>
       <div class="project-visual">
         <div class="project-visual-inner">
@@ -628,7 +616,7 @@ footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.07); p
         <div class="resume-company">Prezzee &middot; Sydney, NSW</div>
         <ul class="resume-bullets">
           <li>Campaign creative across email and digital channels, translating data into testable creative concepts.</li>
-          <li>Built and owned a modular email creative system grounded in lifecycle performance data, resulting in a <strong style="color:#F06235;">300% increase in email opens and clicks.</strong></li>
+          <li>Built and owned a modular email creative system grounded in lifecycle performance data, resulting in up to a <strong style="color:#F06235;">344% increase in email opens and clicks.</strong></li>
           <li>Designed conversion-focused landing pages aligned to paid acquisition goals.</li>
           <li>Brand health reporting &mdash; tracked awareness and conversion metrics, translating insights into strategic recommendations.</li>
         </ul>
